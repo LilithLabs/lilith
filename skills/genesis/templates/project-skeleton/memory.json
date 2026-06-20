@@ -1,0 +1,7 @@
+{
+  "_schema": "lilith-project-memory-v1",
+  "meta": { "project_id": "{{PROJECT_NAME}}", "created": "", "last_updated": "" },
+  "decisions": [],
+  "open_blockers": [],
+  "session_log": []
+}

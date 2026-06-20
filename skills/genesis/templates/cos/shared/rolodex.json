@@ -1,0 +1,5 @@
+{
+  "_schema": "rolodex-v1",
+  "_doc": "Cross-project contact list. The canonical 'who is X' source. Add people as projects reference them. Stays on your machine.",
+  "contacts": []
+}

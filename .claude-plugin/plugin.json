@@ -1,0 +1,10 @@
+{
+  "name": "lilith",
+  "version": "1.0.0",
+  "description": "Lilith -- a personal agentic staff that lives on your machine. Document custody, cross-session memory, and proactive watch over the domains of your life. Local-first: your files live in folders on your machine and Lilith runs no cloud of its own (the model it reads with processes what it reads, like any AI assistant).",
+  "author": { "name": "Lilith Labs" },
+  "homepage": "https://lilithlabs.ai",
+  "repository": "https://github.com/lilithlabs/lilith",
+  "license": "MIT",
+  "keywords": ["assistant", "agentic", "staff", "local-first", "personal", "memory"]
+}

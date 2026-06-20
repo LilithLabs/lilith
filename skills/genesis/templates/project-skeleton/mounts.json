@@ -1,0 +1,4 @@
+{
+  "_doc": "Your expected mount set. On boot, DIFF what is actually mounted against 'expected' (an allowlist). ANYTHING mounted that is not in 'expected' is foreign -- STOP and flag it; do not read it into context (anti-drift C1). A required mount missing -- STOP and ask the user to add it.",
+  "expected": ["{{PROJECT_NAME}}", "shared"]
+}
