@@ -2,7 +2,7 @@
 name: tutorial
 description: >
   Guided, friendly walk-through of Lilith for new (especially non-technical)
-  users. Use when the user says "/tutorial", "walk me through it", "how do I
+  users. Use when the user says "/lilith:tutorial", "walk me through it", "how do I
   use this", "teach me", "I'm new", or is stuck on setup -- especially on the
   step of opening a project in its own Cowork task. Owns the highest-friction
   onboarding moment.
@@ -24,7 +24,7 @@ cloud of its own (what it reads is processed by the model it runs on, like any A
 
 ## Part 2 -- Setup
 
-If they have not run `genesis`, hand off to it. If they have, continue.
+If they have not run `/lilith:genesis`, hand off to it. If they have, continue.
 
 ## Part 3 -- Your first project, the easy way
 
@@ -42,11 +42,11 @@ other. To bring a new one to life, one step at a time:
 1. Open a new Cowork task (new chat/workspace).
 2. Mount that project's folder AND the workspace-root `shared/` folder.
 3. Add your mail or calendar connector if it needs one.
-4. Type `/rebirth wake`.
+4. Type `/lilith:rebirth wake`.
 
-`/rebirth wake` reads the welcome letter left for that project, so it wakes up already
+`/lilith:rebirth wake` reads the welcome letter left for that project, so it wakes up already
 knowing its job. It gets easy after the first time. (Create new domains anytime with
-`/rebirth birth`.)
+`/lilith:rebirth birth`.)
 
 ## Part 5 -- When you forget the ritual (you will, and that's fine)
 
@@ -54,8 +54,8 @@ Lilith recovers gracefully. The three most common slips and the fix:
 
 - "It doesn't seem to know who it is / I see the wrong project." You probably mounted
   the wrong folder, or an extra one. Mount only this project's folder + `shared/`, and
-  re-run `/rebirth wake`.
-- "It forgot what we were doing." You likely opened the task without `/rebirth wake`.
+  re-run `/lilith:rebirth wake`.
+- "It forgot what we were doing." You likely opened the task without `/lilith:rebirth wake`.
   Just run it -- it reads the handoff letter and re-orients.
-- "Its memory feels cluttered or out of date." Run `consolidate-memory` -- it tidies
+- "Its memory feels cluttered or out of date." Run `/lilith:consolidate-memory` -- it tidies
   and reconciles, and tells you what changed.

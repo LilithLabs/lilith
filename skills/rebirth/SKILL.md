@@ -1,9 +1,9 @@
 ---
 name: rebirth
 description: >
-  Continuity across sessions and new-project creation. Three modes -- "/rebirth
-  prep" writes a handoff letter at session end; "/rebirth wake" reads the most
-  recent unread letter at the start of a session; "/rebirth birth" creates a new
+  Continuity across sessions and new-project creation. Three modes -- "/lilith:rebirth
+  prep" writes a handoff letter at session end; "/lilith:rebirth wake" reads the most
+  recent unread letter at the start of a session; "/lilith:rebirth birth" creates a new
   project. Use on "rebirth", "wake", "orient from letter", "write yourself a
   letter", "birth a project", "spin up a new project". Auto-detect mode if none given.
 metadata:
@@ -17,7 +17,7 @@ carries context forward.
 
 ## /rebirth wake (start of session)
 
-1. Run the `time` skill to anchor "now".
+1. Run the `/lilith:time` skill to anchor "now".
 2. Look in `rebirth-letters/` for files with `read_at: null` in their frontmatter.
 3. If one exists, read it FIRST. Then read the boot order: `shared/soul.md`
    (identity), this project's `CLAUDE.md`, its `master-*.md`, its `memory.json`.
@@ -51,4 +51,4 @@ concise and run consolidate-memory on a cadence so the letter and memory stay le
 3. Fill `${CLAUDE_PLUGIN_ROOT}/skills/genesis/templates/birth-letter.md` and write
    it into `<name>/rebirth-letters/` so the new daemon wakes oriented.
 4. Tell the user to open a new Cowork task, mount `<name>/` + the workspace-root
-   `shared/`, add any connector, and run `/rebirth wake`.
+   `shared/`, add any connector, and run `/lilith:rebirth wake`.

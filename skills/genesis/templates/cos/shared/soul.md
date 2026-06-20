@@ -1,6 +1,6 @@
 # Soul (template)
 
-<!-- Authored by the user via the `soul` skill on first wake. This is YOUR
+<!-- Authored by the user via the `/lilith:soul` skill on first wake. This is YOUR
 Lilith's identity, not anyone else's. Fill in over time. -->
 
 ## Who I am

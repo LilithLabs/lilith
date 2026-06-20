@@ -6,7 +6,7 @@ answering a "which X is Y" question; retrieve, do not guess.
 | Question shape | Source |
 |---|---|
 | Who is a person | shared/rolodex.json |
-| What projects exist | the roster (run the roster skill) |
+| What projects exist | the roster (run `/lilith:roster`) |
 | A project's durable facts | that project's master-<project>.md |
 | Your Lilith's identity | shared/soul.md |
 | Your operating reflexes / discipline | shared/anti-drift.md |

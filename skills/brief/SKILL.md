@@ -10,7 +10,7 @@ metadata:
 
 # Brief
 
-1. Run the `time` skill.
+1. Run the `/lilith:time` skill.
 2. If `~~calendar` is connected, pull today's events. If not, say so and skip.
 3. For each project the user has, read its `memory.json` open items + `comms/`.
 4. Synthesize a short briefing: today's calendar, open items by project, and

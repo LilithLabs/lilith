@@ -2,7 +2,7 @@
 name: genesis
 description: >
   First-run onboarding for a brand-new Lilith. Use when the user says
-  "/genesis", "set up Lilith", "get started", "onboard me", "set up my staff",
+  "/lilith:genesis", "set up Lilith", "get started", "onboard me", "set up my staff",
   or when no Prime root / staff structure exists yet. Scaffolds the Prime root,
   runs a short persona wizard, creates chosen projects from templates, writes
   each a birth-handoff letter, and walks the user through bringing the first
@@ -39,11 +39,11 @@ reads is processed by the language model it runs on. Point a curious user at
 Copy `templates/cos/` into the workspace root: `CLAUDE.md`, `lilith-memory.json`,
 and `shared/` (which contains `soul.md`, `rolodex.json`, `canonical-sources.md`, `anti-drift.md` (the daemon's reflexes, read on every boot), `comms-protocol.md`, and `corrections-log.md`).
 `soul.md` lives in `shared/` so every project task can read identity. The user
-authors it via the `soul` skill. A solo user's first instance IS Prime.
+authors it via the `/lilith:soul` skill. A solo user's first instance IS Prime.
 
 ## Step 2b -- Author the soul
 
-Invoke the `soul` skill now to author `shared/soul.md` WITH the user -- their
+Invoke the `/lilith:soul` skill now to author `shared/soul.md` WITH the user -- their
 Lilith's name and voice, who they are, how they like to be helped, and the
 standing guardrails. Identity is read first on every boot, so do not leave it
 at the template placeholder.
@@ -80,8 +80,8 @@ tier SENSITIVE, else STANDARD. Bind connectors generically by what the row needs
 Also write `mounts.json` (fill `{{PROJECT_NAME}}`) and an empty `corrections-log.md` into the project folder -- the manifest powers the boot mount-diff (anti-drift C1) and the local log is where this daemon records its own corrections (it cannot write `shared/`).
 
 Then fill `templates/birth-letter.md` and write it into
-`<project>/rebirth-letters/` (frontmatter `read_at: null`; set `written_at` from the `time` skill). This is the letter
-`/rebirth wake` reads when the user opens the project's task.
+`<project>/rebirth-letters/` (frontmatter `read_at: null`; set `written_at` from the `/lilith:time` skill). This is the letter
+`/lilith:rebirth wake` reads when the user opens the project's task.
 
 ## Step 5 -- Consent ritual (before sensitive ingest)
 
@@ -106,7 +106,7 @@ Deliver one concrete result fast so value lands before the system is fully seede
 
 ## Step 8 -- Offer proactivity
 
-Offer a recurring brief or weekly check via the `schedule` skill. Confirm first.
+Offer a recurring brief or weekly check via the `/lilith:schedule` skill. Confirm first.
 
 ## Step 9 -- Start simple; scale to a family when ready
 
@@ -120,7 +120,7 @@ Introduce it only when the user births a SECOND domain -- then each domain gets 
 Cowork task:
 
 > "Open a new Cowork task. Mount that project's folder AND the workspace-root `shared/`
-> folder. Add your mail/calendar connector. Then type `/rebirth wake`."
+> folder. Add your mail/calendar connector. Then type `/lilith:rebirth wake`."
 
-`/rebirth wake` reads the birth letter and boots that domain oriented (offer `/tutorial`
-for the walk-through). The family grows anytime with `/rebirth birth`.
+`/lilith:rebirth wake` reads the birth letter and boots that domain oriented (offer `/lilith:tutorial`
+for the walk-through). The family grows anytime with `/lilith:rebirth birth`.

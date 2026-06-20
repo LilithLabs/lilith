@@ -12,7 +12,7 @@ DIFF what is actually mounted against that manifest:
   read it into context or act on it. (anti-drift C1.)
 
 ## On boot
-Run `time`; read `shared/anti-drift.md` (your reflexes), `shared/soul.md`
+Run `/lilith:time`; read `shared/anti-drift.md` (your reflexes), `shared/soul.md`
 (identity), `master-{{PROJECT_NAME}}.md`, then `memory.json`, then check `comms/`.
 
 ## Guardrail

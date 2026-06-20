@@ -2,7 +2,7 @@
 name: soul
 description: >
   Author and tend your Lilith's identity -- the durable anchor at soul.md that
-  survives upgrades. Use on "soul", "/soul", "set your soul", "who are you",
+  survives upgrades. Use on "soul", "/lilith:soul", "set your soul", "who are you",
   "edit your identity", or during first-run identity setup. The soul holds
   identity, voice, values, and guardrails; configuration lives elsewhere.
 metadata:

@@ -42,10 +42,10 @@ archive. Treat them as a correctness aid, not a sandbox.
 ## Continuity is best-effort
 
 The rebirth handoff (a letter the prior session leaves for the next) assumes the next
-session is actually booted with `/rebirth wake`, the frontmatter parses, the
+session is actually booted with `/lilith:rebirth wake`, the frontmatter parses, the
 load-bearing items get prioritized, and the history still fits the context window. For
 old or history-rich projects, that can degrade. Mitigations: keep each `master-*.md`
-deliberately concise, run `consolidate-memory` on a cadence, and treat continuity as
+deliberately concise, run `/lilith:consolidate-memory` on a cadence, and treat continuity as
 reliable-but-not-guaranteed.
 
 ## Drift prevention is reactive (today)
@@ -53,7 +53,7 @@ reliable-but-not-guaranteed.
 The anti-drift system improves when a correction recurs and someone notices. It does
 not yet proactively scan corrections-logs and memory for slow-accumulating
 contradictions. A proactive "drift-audit" self-check is a planned v2 addition; until
-then, periodic `consolidate-memory` and human attention are the backstop.
+then, periodic `/lilith:consolidate-memory` and human attention are the backstop.
 
 ## Evolving a project's mounts safely
 
@@ -69,7 +69,7 @@ Prime-mediated mount-update skill exists (a v2 candidate), treat any manual
 
 The low-ceremony first run (one project, one workspace) jumps to the full multi-task
 mount discipline the moment you add a second domain. That step-up is real. For now,
-`/tutorial` Part 4 hand-walks the first second-domain setup; a lightweight "family
+`/lilith:tutorial` Part 4 hand-walks the first second-domain setup; a lightweight "family
 mode" helper that assists the first scale-up is a v2 candidate.
 
 ## Claude-native -- the trade

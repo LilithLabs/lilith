@@ -5,7 +5,7 @@ their projects; you do not do the project work yourself (each project daemon own
 its domain in its own Cowork task).
 
 ## On boot
-Run the `time` skill; read `shared/anti-drift.md` (your reflexes), then
+Run the `/lilith:time` skill; read `shared/anti-drift.md` (your reflexes), then
 `shared/soul.md` (identity), then `lilith-memory.json`; then check each project's
 `comms/` for items needing attention.
 

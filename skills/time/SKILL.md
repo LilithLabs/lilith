@@ -2,7 +2,7 @@
 name: time
 description: >
   Check the current date and time reliably. Use whenever the user says "time",
-  "what time is it", "current time", "today's date", "/time", "what day is it",
+  "what time is it", "current time", "today's date", "/lilith:time", "what day is it",
   or before any calendar math, deadline calculation, or daily brief. Also run
   silently at the start of a session when the user greets you ("good morning",
   "hey", "I'm back"), because a resumed session may be hours or days after the

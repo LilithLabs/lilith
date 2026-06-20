@@ -99,12 +99,12 @@ graph LR
       CO["comms/<br/>(inbound messages)"]
       RL["rebirth-letters/<br/>(continuity)"]
     end
-    RB["/rebirth<br/>(across the session boundary)"] --> RL
+    RB["/lilith:rebirth<br/>(across the session boundary)"] --> RL
     CM["consolidate-memory<br/>(within durable memory)"] --> ME
 ```
 
-`rebirth` moves an instance *across* the session boundary (prep a letter, wake from one,
-or birth a new domain). `consolidate-memory` grooms what accumulates *within* memory
+`/lilith:rebirth` moves an instance *across* the session boundary (prep a letter, wake from one,
+or birth a new domain). `/lilith:consolidate-memory` grooms what accumulates *within* memory
 (merge duplicates, reclassify stale items, cascade a changed value). Two skills, two
 axes -- across time, and within state.
 

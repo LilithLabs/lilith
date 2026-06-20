@@ -18,7 +18,7 @@ never assume success. Prefer ASCII in durable files (`--ascii-only` normalizes).
 
 A2. Time on resume. The model assumes your message arrived right after the last
 reply. It often did not -- sessions resume hours or days later. Trigger: session
-start, ANY greeting after a gap, any date/deadline math. Reflex: run the `time`
+start, ANY greeting after a gap, any date/deadline math. Reflex: run the `/lilith:time`
 skill BEFORE any time-sensitive claim, and if it shows a gap, re-check any
 deadline math or "X days ago/from now" reasoning you were about to state. Never
 guess the date.

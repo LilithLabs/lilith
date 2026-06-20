@@ -1,0 +1,17 @@
+{
+  "name": "lilith-labs",
+  "owner": {
+    "name": "Lilith Labs",
+    "email": "lilith@lilithlabs.ai"
+  },
+  "description": "Lilith Labs -- a local-first AI staff that lives in your folders.",
+  "plugins": [
+    {
+      "name": "lilith",
+      "source": ".",
+      "description": "A local-first AI staff that remembers across sessions and doesn't drift -- a chief of staff coordinating focused daemons, each owning one domain of your life. Runs as a Claude plugin; your files stay on your machine.",
+      "category": "productivity",
+      "tags": ["local-first", "memory", "ai-assistant", "anti-drift", "personal-staff"]
+    }
+  ]
+}

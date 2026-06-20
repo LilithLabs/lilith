@@ -33,10 +33,10 @@ actually enforce is a documentation line, not a guarantee; label it honestly.
 
 ## Birth a new domain
 
-Run `/rebirth birth`. It copies the `project-skeleton/` template into a new folder, fills
+Run `/lilith:rebirth birth`. It copies the `project-skeleton/` template into a new folder, fills
 the placeholders (name, display name, domain summary, guardrail tier), writes a
 birth-handoff letter so the new instance wakes oriented, and registers the domain. Then
-open a new task, mount that folder plus `shared/`, and run `/rebirth wake`. The skeleton
+open a new task, mount that folder plus `shared/`, and run `/lilith:rebirth wake`. The skeleton
 is the contract: a `CLAUDE.md`, a `master-*.md`, a `memory.json`, a `mounts.json`
 (its expected-mount allowlist), and the `comms/` and `rebirth-letters/` folders.
 
@@ -52,7 +52,7 @@ Each domain's behavior is shaped by its boot files, and you can edit them direct
 - `mounts.json` -- the expected-mount allowlist the boot mount-diff checks against. When a
   domain genuinely needs a new mount, update this deliberately and with confirmation -- do
   not improvise a mount that bypasses the check.
-- `shared/soul.md` -- the assistant's identity, authored with the `soul` skill.
+- `shared/soul.md` -- the assistant's identity, authored with the `/lilith:soul` skill.
 
 The discipline that keeps edits safe is the same one the system uses on itself: write
 durable files through the bundled `safe-write.sh` (it defeats silent editor truncation),
