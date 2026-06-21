@@ -8,7 +8,7 @@ description: >
   each a birth-handoff letter, and walks the user through bringing the first
   project to life. Local-first.
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Genesis -- First Wake of a New Lilith
@@ -39,14 +39,21 @@ reads is processed by the language model it runs on. Point a curious user at
 Copy `templates/cos/` into the workspace root: `CLAUDE.md`, `lilith-memory.json`,
 and `shared/` (which contains `soul.md`, `rolodex.json`, `canonical-sources.md`, `anti-drift.md` (the daemon's reflexes, read on every boot), `comms-protocol.md`, and `corrections-log.md`).
 `soul.md` lives in `shared/` so every project task can read identity. The user
-authors it via the `/lilith:soul` skill. A solo user's first instance IS Prime.
+personalizes it via the `/lilith:soul` skill (it ships as an active default, not a blank). A solo user's first instance IS Prime.
 
-## Step 2b -- Author the soul
+## Step 2b -- Personalize the soul, then mirror it
 
-Invoke the `/lilith:soul` skill now to author `shared/soul.md` WITH the user -- their
-Lilith's name and voice, who they are, how they like to be helped, and the
-standing guardrails. Identity is read first on every boot, so do not leave it
-at the template placeholder.
+`shared/soul.md` ships as a strong, opinionated DEFAULT that is already active -- it
+carries the prime directives, voice, and guardrails out of the box. It is NOT a blank to
+fill from scratch. Invoke the `/lilith:soul` skill now to PERSONALIZE the blanks WITH the
+user -- their Lilith's name and voice, who they are, the people who matter, how they like
+to be helped. They may keep the defaults; they should not gut them.
+
+Then do the one-time MIRROR. A plugin cannot write the Cowork personalization pane for the
+user, so walk them through pasting the soul's "On waking" check and identity into the app's
+personalization/preferences pane themselves. That second channel is what lets identity --
+and the mount-check -- load on every future instance even before any folder is mounted.
+Frame it honestly as a one-time manual step, not something Lilith does automatically.
 
 ## Step 3 -- Persona wizard
 

@@ -13,6 +13,19 @@ every domain, until contexts bleed and judgment blurs. And they **accumulate sil
 errors** -- an invented name, a stale date, a half-written file -- that compound
 unnoticed. Lilith is four structural choices that each attack one of those failures.
 
+The shape of it, at a glance: a coordinator plus one daemon per domain, each reading a
+shared reference folder, coordinating only through files on disk.
+
+```mermaid
+graph LR
+    S[("shared/<br/>identity + reference")]
+    P["Prime<br/>(Chief of Staff)"]
+    D["project daemon<br/>(one domain)"]
+    P -- reads --> S
+    D -- reads --> S
+    P -. files on disk .- D
+```
+
 ## Pillar 1 -- Rebirth continuity (surviving the session boundary)
 
 An instance lives one session. When the context window fills or the model upgrades, that
@@ -38,6 +51,37 @@ sequenceDiagram
 The counterintuitive-yet-obvious framing: *how does an assistant remember who it is after
 it "dies"?* It writes itself a letter. (Continuity is best-effort, not a hard guarantee --
 see `security-and-limitations.md`.)
+
+### The soul -- who I am across the boundary
+
+Two different things have to survive the session boundary, and Lilith keeps them in two
+different files. The handoff letter carries *what we were doing* -- the open threads and the
+posture of the moment. The **soul** carries *who I am* -- name, voice, the people who
+matter, values, and prime directives. Context is perishable and rewritten every session;
+identity is durable and changes only with deliberate approval. Splitting them means a model
+upgrade or a context reset can wipe the working state without touching the self.
+
+The soul is the anchor for the **identity dimension** of drift -- the slow slide where an
+assistant forgets whose it is, what it refuses to do, and how it carries itself. It is not
+the whole of anti-drift: the other reflexes (proper nouns are retrieval, dates are anchored,
+writes are verified, mounts are checked) guard other failure modes. The soul guards the
+self, and it is what makes rebirth mean anything -- the letter says "Dear future-me," and
+the soul is who "me" is.
+
+It loads on **two channels**, by design:
+
+1. **As a file** (`shared/soul.md`), read in the boot order once a folder is mounted -- so
+   identity is inspectable and versionable like everything else.
+2. **As a pin in the app's personalization pane** -- a one-time manual paste the user does
+   themselves (a plugin cannot write that pane). This channel is Cowork-specific. It is the load-bearing one -- it injects identity into *every* fresh instance, even before any folder is mounted -- which also means the protection it carries exists only once the user has done that one manual paste.
+
+That second channel is why the soul opens with an **"On waking" check** -- *which folder is
+mounted, therefore which instance am I, and stop if I am blind.* That check has to run
+before any folder is read, so it cannot live in a file inside the folder it is checking for
+(the chicken-and-egg: an unmounted instance cannot read the file that would tell it to check
+the mount). It lives in the soul precisely because the soul reaches the instance through the
+personalization channel first. The detailed mount-diff still lives in `anti-drift.md` for
+once a folder is present; the soul holds only the bootstrap that must survive a missing mount.
 
 ## Pillar 2 -- The comms bus (a family, not a monolith)
 
@@ -66,6 +110,11 @@ mounted. A daemon that finds a foreign folder mounted stops and flags it -- a da
 reads three domains' files no longer knows which one it is. The honest bound: this
 isolation is only as strong as the model's adherence to the mount-diff rule on every
 boot. It is a workflow contract, not an OS sandbox (see `security-and-limitations.md`).
+
+The full power of this pillar -- the comms bus, the coordinator tier, the family reflexes --
+activates only once you run two or more domains. A solo user with a single project still
+gets a coherent assistant with memory and discipline; the family machinery simply stays
+dormant until there is a second domain for it to keep apart.
 
 ## Pillar 3 -- The anti-drift discipline
 
@@ -113,18 +162,40 @@ axes -- across time, and within state.
 Waking is deterministic, and the order is deliberate: **universal context first, then
 session posture, then domain specifics.**
 
+0. Before any file is read -- from the personalization pane, run the soul's "On waking"
+   check: which folder is mounted, therefore which instance am I, and stop if I am blind.
 1. Anchor the clock (the session may have resumed days later).
 2. Read the operating reflexes (`anti-drift.md`).
-3. Read identity (`soul.md`).
+3. Read identity in full (`soul.md`).
 4. Read the handoff letter, if one is unread.
 5. Read the contract (`CLAUDE.md`), the bedrock (`master-*.md`), then state (`memory.json`).
 6. Check `comms/` for anything waiting.
 
-Identity and discipline ground the letter; the letter sets posture before the domain
-detail lands. Universal-then-specific is the dependency-correct order. (Reflexes are read
-before identity here by design: in the public form `soul.md` may still be a fresh template
-on first boot, so the operating rules load first. A system with a fully authored identity
-may prefer identity-first.)
+Step 0 is the only step that needs no mounted folder -- it rides the personalization
+channel, which is exactly why the bootstrap check lives in the soul. From step 1 on, the
+order is universal-then-specific: discipline and identity ground the letter, and the letter
+sets posture before the domain detail lands -- the dependency-correct sequence. (Reflexes
+are read before the *full* soul file by design, so the platform-safety rules load first even
+on an unusual boot; the identity bootstrap itself has already run at step 0.)
+
+## Limitations and trade-offs
+
+The honest bounds, gathered in one place:
+
+- **Continuity is best-effort, not guaranteed.** The handoff letter is a curated summary,
+  not a transcript, and it degrades as a project's history grows long and tangled. It
+  carries the important threads forward, not every detail.
+- **Isolation is a workflow contract, not a sandbox.** Domain separation holds only as long
+  as the model honors the mount-diff rule on every boot. It is enforced by discipline and
+  convention, not by the operating system.
+- **The architecture pays off most at two or more domains.** A single-project user gets
+  memory and discipline; the family pillars only earn their keep once there is more than one
+  domain to keep apart.
+- **It runs inside Claude.** Lilith is a Cowork plugin and assumes a capable Claude plan,
+  riding that runtime's limits -- the cost of not having to manage another one.
+
+None of these is buried: each is called out where it applies, and
+`security-and-limitations.md` is the unabridged version.
 
 ## Where to go next
 

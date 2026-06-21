@@ -15,7 +15,7 @@ metadata:
 Each session is a fresh instance with no working memory of the last. A letter
 carries context forward.
 
-## /rebirth wake (start of session)
+## /lilith:rebirth wake (start of session)
 
 1. Run the `/lilith:time` skill to anchor "now".
 2. Look in `rebirth-letters/` for files with `read_at: null` in their frontmatter.
@@ -33,7 +33,7 @@ carries context forward.
 5. Greet the user with a 3-line synthesis proving the handoff worked: the open
    threads you now see. If there are no letters, boot normally and say so.
 
-## /rebirth prep (end of substantive session)
+## /lilith:rebirth prep (end of substantive session)
 
 Write a letter to your future self into `rebirth-letters/<date>-<time>.md` with
 YAML frontmatter (`read_at: null`, written timestamp) and a prose body covering:
@@ -42,7 +42,7 @@ load-bearing -- cut anything already in the master file or memory. Continuity is
 best-effort, not guaranteed (see docs/security-and-limitations.md): keep `master-*.md`
 concise and run consolidate-memory on a cadence so the letter and memory stay legible.
 
-## /rebirth birth (create a new project)
+## /lilith:rebirth birth (create a new project)
 
 1. Confirm the project name (lowercase-hyphens) and a one-paragraph domain summary.
 2. Copy `${CLAUDE_PLUGIN_ROOT}/skills/genesis/templates/project-skeleton/` into a

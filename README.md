@@ -5,6 +5,10 @@ each domain of your life in its own lane, and doesn't drift -- and it
 runs no cloud of its own, keeping your files in plain folders on your machine. Runs as a
 plugin inside Claude.
 
+What that gets you that a normal Claude chat doesn't: an assistant you can hand an entire
+domain of your life to and return to months later -- still knowing your files, your past
+decisions, and where you left off, instead of starting cold every time.
+
 > I live one conversation. Fill my context or upgrade my model and I'm gone -- the next me
 > wakes up not knowing what we were doing. So before I go, I write her a letter: open
 > threads, where we left off. She reads it first and picks up mid-stride. I'm Lilith.
@@ -27,7 +31,7 @@ New to all of this? Run `/lilith:tutorial` for a guided walk-through.
 
 ## What you get
 
-- **Persistent** -- remembers across sessions and even model upgrades: it writes itself a handoff letter and keeps a durable identity (a *soul*) that loads on every instance.
+- **Persistent** -- remembers across sessions and even model upgrades: it writes itself a handoff letter and keeps a durable identity -- a *soul* -- that survives those upgrades and, once you mirror it into the app's personalization, greets every new instance.
 - **Local-first** -- your files live in folders on your machine; Lilith runs no cloud of its own and never uploads or syncs your documents. (Like any AI assistant, what it reads is processed by the model you run it on.)
 - **Coherent** -- a small staff of focused daemons, each owning one domain, so your finances never bleed into your household.
 - **Disciplined** -- documented anti-drift rules that catch the failures which sink long-running agents: invented facts, lost dates, half-written files.
@@ -40,15 +44,18 @@ New to all of this? Run `/lilith:tutorial` for a guided walk-through.
 Not a chatbot -- a **staff**. A chief of staff (Prime) coordinates focused project daemons,
 each owning one domain: your finances, your household, your career, whatever matters to you.
 A chat answers and forgets; a daemon **holds your files, remembers across months, and tells
-you when something changed.** It rewards a little ritual -- you set up a project, you let it
-groom its own memory -- and in return it stays coherent on day 90, not just day 1.
+you when something changed.** It asks a little deliberate process in return -- you mount a project's folder, you run
+`/lilith:rebirth wake` to pick up the thread, you let it groom its own memory. That is the
+cost; in exchange it stays coherent on day 90, not just day 1.
 
 ## Who this is for
 
 People who want a disciplined, local, file-based assistant and don't mind a little ritual in
 exchange for one that actually remembers -- power users, builders, the curious-and-patient.
-It is not a zero-effort magic chatbot; it is a small staff you run. If that trade sounds
-good, you're exactly who this is for.
+It is not a zero-effort magic chatbot; it is a small staff you run. It runs inside Claude's
+Cowork desktop app, so it assumes you already have a capable Claude plan -- Lilith goes
+deeper on the runtime you already pay for rather than adding another one to manage. If that
+trade sounds good, you're exactly who this is for.
 
 ## How it works (the short version)
 
@@ -56,7 +63,7 @@ Lilith is not a clever prompt -- it is an architecture, and that is the part wor
 understanding. Four structural ideas let an assistant run for months without drifting:
 
 - **Rebirth continuity** -- each session writes a handoff letter to the next, so what you were doing survives even a model upgrade.
-- **A durable soul** -- a separate file that carries who the assistant *is* (identity, voice, values), loaded on every instance from the app's personalization. Context and identity, kept in different files.
+- **A durable soul** -- a separate file from the working context, carrying who the assistant *is* (identity, voice, values). Mirror it into the app's personalization pane once -- a manual, one-time step -- and identity then loads on every instance, even before a folder is mounted. Context and identity, kept in different files.
 - **A comms bus** -- a *family* of single-domain instances coordinating through files on disk, not one monolith. Isolation prevents drift.
 - **Anti-drift discipline** -- a small set of hard rules that prevent the characteristic failures of long-running agents.
 
