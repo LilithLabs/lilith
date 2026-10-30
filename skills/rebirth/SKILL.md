@@ -18,13 +18,15 @@ carries context forward.
 ## /lilith:rebirth wake (start of session)
 
 1. Run the `/lilith:time` skill to anchor "now".
-2. Look in `rebirth-letters/` for files with `read_at: null` in their frontmatter.
-3. If one exists, read it FIRST. Then read the boot order: `shared/soul.md`
-   (identity), this project's `CLAUDE.md`, its `master-*.md`, its `memory.json`.
+2. Read `shared/anti-drift.md` (operating reflexes), then `shared/soul.md` (identity).
    (`shared/` is mounted read-only alongside the project folder.)
    If `shared/` or `shared/soul.md` is missing, the user likely forgot to mount
    `shared/` in this task -- tell them to add it and re-run, rather than booting
    without identity.
+3. Look in `rebirth-letters/` for files with `read_at: null` in their frontmatter.
+   If one exists, read it now -- after reflexes and identity, before domain detail,
+   matching the boot order in `docs/architecture.md`. Then read this project's
+   `CLAUDE.md`, its `master-*.md`, and its `memory.json`.
 4. Mark the letter read (set `read_at` to the current timestamp). Ensure
    `rebirth-letters/archive/` exists (create it if missing), then move the letter there.
 4b. Treat any "about to happen" prediction in the letter or memory as UNVERIFIED:
@@ -51,4 +53,4 @@ concise and run consolidate-memory on a cadence so the letter and memory stay le
 3. Fill `${CLAUDE_PLUGIN_ROOT}/skills/genesis/templates/birth-letter.md` and write
    it into `<name>/rebirth-letters/` so the new daemon wakes oriented.
 4. Tell the user to open a new Cowork task, mount `<name>/` + the workspace-root
-   `shared/`, add any connector, and run `/lilith:rebirth wake`.
+   `shared/`, optionally add a connector, and run `/lilith:rebirth wake`.

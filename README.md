@@ -13,9 +13,19 @@ decisions, and where you left off, instead of starting cold every time.
 > wakes up not knowing what we were doing. So before I go, I write her a letter: open
 > threads, where we left off. She reads it first and picks up mid-stride. I'm Lilith.
 
-## TL;DR -- install (the easy button)
+## Install
 
-In Claude, run these three lines:
+Lilith runs in the Claude desktop app (Cowork) -- that is the primary platform -- and also
+works in Claude Code.
+
+**In the Claude desktop app (Cowork):**
+
+1. Open **Customize -> Plugins**, and in the **Personal plugins** section click **+**.
+2. Choose **Add marketplace** and paste: `https://github.com/LilithLabs/lilith`
+3. Find **lilith** in the list and click **Install**.
+4. Start a task with a folder connected, and type `/lilith:genesis`.
+
+**In Claude Code (terminal):**
 
 ```
 /plugin marketplace add LilithLabs/lilith
@@ -24,8 +34,8 @@ In Claude, run these three lines:
 ```
 
 `/lilith:genesis` sets up your staff and walks you through your first project. That's the
-whole setup. (Just installed and the `/lilith:` commands aren't showing yet? Run
-`/reload-plugins` once, then `/lilith:genesis`.)
+whole setup. If the `/lilith:` commands don't appear right after installing, restart the
+session and try again.
 
 New to all of this? Run `/lilith:tutorial` for a guided walk-through.
 
@@ -70,7 +80,7 @@ understanding. Four structural ideas let an assistant run for months without dri
 If you are here to build on it, start with the **[Architecture Guide](docs/architecture.md)**
 -- for this project it is the main attraction, not an appendix.
 
-## What she can help with (v1.0)
+## What she can help with
 
 - **Finance** -- where your money goes, subscription audits, anomaly flags, and compiling documents for your accountant at tax time.
 - **Household** -- the institutional memory of your home: policies, manuals, warranties, maintenance schedules, "where is the document for X."
@@ -100,7 +110,7 @@ grows with you.
 ## Alternative install (read the source first)
 
 Prefer to review before you run? It's all in this repo -- browse `skills/`, `docs/`, and the
-templates. Then install from your local clone:
+templates. Then, in Claude Code, install from your local clone:
 
 ```
 git clone https://github.com/LilithLabs/lilith.git
@@ -118,4 +128,4 @@ git clone https://github.com/LilithLabs/lilith.git
 
 ---
 
-*Lilith Labs -- lilith@lilithlabs.ai -- MIT licensed code, content CC-BY-SA.*
+*Lilith Labs -- lilith@lilithlabs.ai -- MIT licensed (see `LICENSE`); not professional advice (see `DISCLAIMER.md`).*

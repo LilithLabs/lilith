@@ -3,7 +3,7 @@
 > The thesis: a prompt is copyable in an afternoon. A *system* that lets an assistant
 > run for months, across many sessions and many domains, without drifting, forgetting,
 > or collapsing into a monolith -- that is the hard part, and that is what Lilith is.
-> The personality is the on-ramp; the architecture is the product. Version 0.1, 2026-06-20.
+> The personality is the on-ramp; the architecture is the product.
 
 ## The problem
 

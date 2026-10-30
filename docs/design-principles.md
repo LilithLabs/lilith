@@ -3,8 +3,7 @@
 > The *why* behind Lilith's discipline. The anti-drift rules are the mechanical
 > reflexes; these are the human-judgment lessons that cannot be mechanized -- so we
 > write them down honestly rather than pretending a rule enforces them. They are
-> drawn from a long operating history, stated as patterns only. Version 0.1,
-> 2026-06-20.
+> drawn from a long operating history, stated as patterns only.
 
 A note on honesty: a lesson the system can *enforce* is an anti-drift rule. A lesson
 that takes judgment is a principle. Calling a principle a "guarantee" is its own kind

@@ -1,7 +1,7 @@
 # Extending Guide
 
 > Lilith is meant to be modified. The same boot-file lifecycle that runs the shipped
-> domains is the spec you extend. Four common tasks. Version 0.1, 2026-06-20.
+> domains is the spec you extend. Four common tasks.
 
 ## Add a skill
 

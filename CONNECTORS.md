@@ -4,9 +4,10 @@
 
 Lilith's skills refer to tools by category using a `~~` placeholder, not by
 brand. `~~email` means whatever mail service you connect; `~~calendar` means
-whatever calendar you connect. When you install Lilith, the customizer binds
-these placeholders to the tools you actually use -- so the same skills work
-whether you are on Google, Outlook, or a local mail store.
+whatever calendar you connect. Nothing is bound at install time: you connect
+whichever tools you use through the app, and the skills check at run time whether
+a matching connector is present -- so the same skills work whether you are on
+Google, Outlook, or a local mail store, and work without any connector at all.
 
 ## Connectors for this plugin
 

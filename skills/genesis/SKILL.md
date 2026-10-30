@@ -127,7 +127,7 @@ Introduce it only when the user births a SECOND domain -- then each domain gets 
 Cowork task:
 
 > "Open a new Cowork task. Mount that project's folder AND the workspace-root `shared/`
-> folder. Add your mail/calendar connector. Then type `/lilith:rebirth wake`."
+> folder. (Optional) add a mail/calendar connector. Then type `/lilith:rebirth wake`."
 
 `/lilith:rebirth wake` reads the birth letter and boots that domain oriented (offer `/lilith:tutorial`
 for the walk-through). The family grows anytime with `/lilith:rebirth birth`.

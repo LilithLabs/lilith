@@ -32,5 +32,5 @@ expected, and what happened.
   gate on identity and on any irreversible action.
 - No secrets, personal data, or machine-specific paths in anything you submit.
 
-By contributing, you agree your contributions are licensed under the repository's terms --
-MIT for code, CC-BY-SA for content.
+By contributing, you agree your contributions are licensed under the repository's MIT
+license (see `LICENSE`).
