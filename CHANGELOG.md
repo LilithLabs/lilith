@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.2 -- 2026-11-25
+
+- Docs: add `docs/how-it-works.md`, a public map of the reference deployment (staff, memory layers, directive lifecycle, tools, boot testing, evolution) with Mermaid diagrams. Linked from the README.
+
 ## 1.1.1 -- 2026-10
 
 A cleanup release. No change to how Lilith behaves.

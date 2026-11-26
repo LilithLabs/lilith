@@ -121,6 +121,7 @@ git clone https://github.com/LilithLabs/lilith.git
 
 ## Documentation
 
+- **[How Lilith Works](docs/how-it-works.md)** -- the full reference deployment this plugin came from: the staff, memory layers, a directive's life, eight months of evolution.
 - **[Architecture Guide](docs/architecture.md)** -- how it works (the pillars, the lifecycle, diagrams).
 - **[Extending Guide](docs/extending.md)** -- add a skill, write a rule, birth a domain.
 - **[Design Principles](docs/design-principles.md)** -- the *why* behind the discipline.
