@@ -79,15 +79,19 @@ project, look up its catalog row and copy `templates/project-skeleton/` into a
 new `<project>/` folder (including `comms/` and `rebirth-letters/archive/`),
 filling placeholders from the row: `{{PROJECT_NAME}}`, `{{PROJECT_DISPLAY_NAME}}`,
 `{{PROJECT_DOMAIN_SUMMARY}}`, `{{GUARDRAIL_TIER}}`, `{{INTAKE_CHECKLIST}}`,
-`{{DISCLAIMER}}`. Map catalog labels to placeholders: `Domain summary:` -> `{{PROJECT_DOMAIN_SUMMARY}}`, `Intake:` -> `{{INTAKE_CHECKLIST}}`, `tier:` -> `{{GUARDRAIL_TIER}}`, `Disclaimer:` -> `{{DISCLAIMER}}`. The row name fills `{{PROJECT_NAME}}` (lowercase) and `{{PROJECT_DISPLAY_NAME}}` (title-cased). The project's CLAUDE.md declares its expected mounts (its own folder + `shared/`) so it can detect a missing or foreign mount on boot. For SENSITIVE projects inject the disclaimer into the master
+`{{DISCLAIMER}}`, and `{{TIMESTAMP}}` (from the `/lilith:time` skill, ISO 8601, e.g.
+`2026-11-25T20:30-05:00`). Rename
+`master-PROJECT.md` to `master-<project>.md` (e.g. `master-household.md`). Map catalog labels to placeholders: `Domain summary:` -> `{{PROJECT_DOMAIN_SUMMARY}}`, `Intake:` -> `{{INTAKE_CHECKLIST}}`, `tier:` -> `{{GUARDRAIL_TIER}}`, `Disclaimer:` -> `{{DISCLAIMER}}`. The row name fills `{{PROJECT_NAME}}` (lowercase) and `{{PROJECT_DISPLAY_NAME}}` (title-cased). The project's CLAUDE.md declares its expected mounts (its own folder + `shared/`) so it can detect a missing or foreign mount on boot. For SENSITIVE projects inject the disclaimer into the master
 file. STANDARD-tier projects (household, career, education) have no disclaimer -- leave `{{DISCLAIMER}}` empty. For `transitions`, ask whether this is an estate/loss matter; if yes set
 tier SENSITIVE, else STANDARD. Bind connectors generically by what the row needs
 (`~~email`, `~~calendar`, and `~~jobs` for career).
 
 Also write `mounts.json` (fill `{{PROJECT_NAME}}`) and an empty `corrections-log.md` into the project folder -- the manifest powers the boot mount-diff (anti-drift C1) and the local log is where this daemon records its own corrections (it cannot write `shared/`).
 
-Then fill `templates/birth-letter.md` and write it into
-`<project>/rebirth-letters/` (frontmatter `read_at: null`; set `written_at` from the `/lilith:time` skill). This is the letter
+Then fill `templates/birth-letter.md` and write it as
+`<project>/rebirth-letters/<YYYY-MM-DD-HHMM>-birth.md` (frontmatter `read_at: null`;
+`{{TIMESTAMP}}` fills `written_at`). Before finishing, search the new folder for any
+leftover `{{` and fill it. This is the letter
 `/lilith:rebirth wake` reads when the user opens the project's task.
 
 ## Step 5 -- Consent ritual (before sensitive ingest)

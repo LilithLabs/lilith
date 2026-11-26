@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.1.3 -- 2026-11-25
+
+A fix release from a fresh-user test run of `/lilith:genesis`.
+
+- **Solo start no longer trips the mount check.** The recommended first-project layout (one project worked from the workspace root) contradicted the project template's mount rule. Project files, `mounts.json` and Prime's contract now agree: the mount check applies when a project runs in its own task, and is dormant when the workspace root (Prime's seat) is mounted. Each file says where `shared/` and letters live, and when to graduate to one task per project.
+- One boot order everywhere (matches `docs/architecture.md`): clock, reflexes, soul, unread letter, contract, master, memory, comms.
+- Genesis now lists every placeholder it must fill (including `{{TIMESTAMP}}`), says to rename `master-PROJECT.md`, names the birth-letter file, and checks for leftover `{{`.
+- The never-advise guardrail reads as universal in project files and birth letters (it always was); SENSITIVE adds consent and a disclaimer.
+- Template `.gitkeep` files are empty, so they no longer show up in comms or letter scans.
+
 ## 1.1.2 -- 2026-11-25
 
 - Docs: add `docs/how-it-works.md`, a public map of the reference deployment (staff, memory layers, directive lifecycle, tools, boot testing, evolution) with Mermaid diagrams. Linked from the README.

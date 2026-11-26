@@ -19,7 +19,9 @@ carries context forward.
 
 1. Run the `/lilith:time` skill to anchor "now".
 2. Read `shared/anti-drift.md` (operating reflexes), then `shared/soul.md` (identity).
-   (`shared/` is mounted read-only alongside the project folder.)
+   (In its own task, `shared/` is mounted read-only alongside the project folder. In
+   a solo start -- workspace root mounted, one project -- it is the workspace-root
+   `shared/`, and the letters are in that project's `rebirth-letters/`.)
    If `shared/` or `shared/soul.md` is missing, the user likely forgot to mount
    `shared/` in this task -- tell them to add it and re-run, rather than booting
    without identity.
@@ -37,7 +39,8 @@ carries context forward.
 
 ## /lilith:rebirth prep (end of substantive session)
 
-Write a letter to your future self into `rebirth-letters/<date>-<time>.md` with
+Write a letter to your future self into `rebirth-letters/<YYYY-MM-DD-HHMM>.md` (in a solo
+start, the project's `rebirth-letters/`) with
 YAML frontmatter (`read_at: null`, written timestamp) and a prose body covering:
 corrections the user made, open threads, tone, and what to do next. Keep it
 load-bearing -- cut anything already in the master file or memory. Continuity is
@@ -48,7 +51,9 @@ concise and run consolidate-memory on a cadence so the letter and memory stay le
 
 1. Confirm the project name (lowercase-hyphens) and a one-paragraph domain summary.
 2. Copy `${CLAUDE_PLUGIN_ROOT}/skills/genesis/templates/project-skeleton/` into a
-   new `<name>/` folder (workspace, read-write); fill the placeholders. If it
+   new `<name>/` folder (workspace, read-write) -- all of it, including `mounts.json`,
+   `corrections-log.md`, `WHAT-TO-DROP-HERE.md`, `comms/` and `rebirth-letters/archive/`;
+   fill the placeholders and rename `master-PROJECT.md` to `master-<name>.md`. If it
    matches a `project-catalog.md` row, use those values.
 3. Fill `${CLAUDE_PLUGIN_ROOT}/skills/genesis/templates/birth-letter.md` and write
    it into `<name>/rebirth-letters/` so the new daemon wakes oriented.
